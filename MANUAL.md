@@ -380,7 +380,7 @@ The table below reflects the official Google Cloud quotas for the Gemini Enterpr
 
 ## 8. Validation Procedure and the 22-Scenario Test Suite
 
-After deploying the pipeline and the agent in the customer environment, the administrator can verify the entire environment by running the automated suite of 22 tests:
+After deploying the pipeline and the agent in the customer environment, the administrator can verify the entire environment by running the automated suite of 24 tests:
 
 ```bash
 python3 tests/test_suite.py

@@ -25,4 +25,5 @@ if ! python3 -c "import google.adk, google.api_core; assert google.adk.__version
         "cloudpickle>=3.0.0"
 fi
 
+export PYTHONUNBUFFERED=1
 exec python3 "${SCRIPT_DIR}/deploy.py" "$@"

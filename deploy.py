@@ -311,7 +311,7 @@ def setup_bigquery_and_sink(project_id, location, dataset_id, sink_name="gemini-
 
     # 2. Cloud Logging sink to BigQuery
     sink_filter = (
-        'logName=~"cloudaudit.googleapis.com" OR '
+        '(logName=~"cloudaudit.googleapis.com" AND protoPayload.serviceName="discoveryengine.googleapis.com") OR '
         '(logName=~"discoveryengine.googleapis.com%2Fgemini_enterprise_user_activity" AND '
         'NOT (jsonPayload.logMetadata.methodName="Search" OR '
         'jsonPayload.logMetadata.methodName="ConverseConversation" OR '

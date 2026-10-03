@@ -99,7 +99,7 @@ def main():
         'jsonPayload.logMetadata.methodName="AnswerQuery")'
     )
     sink_filter = (
-        'logName=~"cloudaudit.googleapis.com" OR '
+        '(logName=~"cloudaudit.googleapis.com" AND protoPayload.serviceName="discoveryengine.googleapis.com") OR '
         '(logName=~"discoveryengine.googleapis.com%2Fgemini_enterprise_user_activity" AND '
         'NOT (jsonPayload.logMetadata.methodName="Search" OR '
         'jsonPayload.logMetadata.methodName="ConverseConversation" OR '

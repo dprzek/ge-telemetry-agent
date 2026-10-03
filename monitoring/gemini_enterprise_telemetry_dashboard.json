@@ -1,0 +1,191 @@
+{
+  "displayName": "Gemini Enterprise - Quotas, Adoption and Observability",
+  "gridLayout": {
+    "columns": 2,
+    "widgets": [
+      {
+        "title": "Agent Session Count and Conversation Turns",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/agent_session_count\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_DELTA"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            },
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/agent_turn_count\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_DELTA"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      },
+      {
+        "title": "UX Responsiveness: Time to First Token (TTFT Latency)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/engine/time_to_first_token_latency\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_MEAN"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Assistant Queries (Daily Usage)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/quota/text_answer_gen_tier_enterprise_regional/usage\" resource.type=\"consumed_api\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_RATE"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Deep Research Queries",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/quota/deep_research_query_total_tier_enterprise_regional/usage\" resource.type=\"consumed_api\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_RATE"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Agents Created (Agent Builder)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/quota/agents_tier_enterprise_regional/usage\" resource.type=\"consumed_api\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_RATE"
+                  }
+                }
+              },
+              "plotType": "STACKED_BAR"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Sessions with Tool Usage and Tool Latencies",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/agent_session_with_tool_count\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_DELTA"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Image and Video Generation",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/quota/image_gen_tier_enterprise_regional/usage\" resource.type=\"consumed_api\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_RATE"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      },
+      {
+        "title": "AI Developer Tool Credit Consumption (WTU)",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/quota/ai_dev_tool_wtu_tier_enterprise_standard_regional/usage\" resource.type=\"consumed_api\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_RATE"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      },
+      {
+        "title": "Storage and Total Document Size",
+        "xyChart": {
+          "dataSets": [
+            {
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"discoveryengine.googleapis.com/total_document_size_regional\" resource.type=\"consumed_api\"",
+                  "aggregation": {
+                    "alignmentPeriod": "3600s",
+                    "perSeriesAligner": "ALIGN_MEAN"
+                  }
+                }
+              },
+              "plotType": "LINE"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

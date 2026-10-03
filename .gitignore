@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.terraform/
+*.tfstate
+*.tfstate.backup
+.env
+*.log

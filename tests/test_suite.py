@@ -378,7 +378,8 @@ class GeminiEnterprise20TestSuite(unittest.TestCase):
         summary_json = get_user_summary()
         summary_data = json.loads(summary_json)
         self.assertIn("users", summary_data)
-        self.assertGreaterEqual(len(summary_data["users"]), 2)
+        # A freshly provisioned tenant may only have a single active user (the deployer).
+        self.assertGreaterEqual(len(summary_data["users"]), 1)
 
         adoption_json = get_daily_adoption(days=30)
         adoption_data = json.loads(adoption_json)
